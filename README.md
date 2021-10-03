@@ -1,4 +1,4 @@
-# EC-601-Proj2a
+# EC-601-Proj2
 Yunjie Huang
 U70536658
 Section A1
@@ -19,5 +19,15 @@ And it also have some parameter can setup the time interval.
 In the Twiter each user will have three names: id user_id and screen_name.
 This function is use to convert between this three name.
 In another word, if we know one of three name, we can get other two names by this function.
+
+## function4 word ana
+This file is a test of google NLP api. I usde google NLP to analyze natural language. The text i use is 'nice food'.
+The result is 0.899, which is very positive.
+
+
+## user story.
+The owner of the restaurant can use my program to determine what types of restaurants are popular in this area.
+First use twiter api get the tweets about different type of food in this area.
+Then use google NLP find the most positive one.
 
 
