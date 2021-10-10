@@ -34,10 +34,11 @@ count = 0
 for follower in api.get_follower_ids(screen_name=name):
     # this for loop will go through each follower
     results = api.search_tweets(q=query, lang=language)
-    document = language_v1.Document(content=results, type_=language_v1.Document.Type.PLAIN_TEXT)
-    sentiment = client.analyze_sentiment(request={'document': document}).document_sentiment
-    score = score + sentiment.magnitude
-    count = count + 1
+    if result != []:
+        document = language_v1.Document(content=results, type_=language_v1.Document.Type.PLAIN_TEXT)
+        sentiment = client.analyze_sentiment(request={'document': document}).document_sentiment
+        score = score + sentiment.magnitude
+        count = count + 1
 
 avescore = score/count
 
