@@ -25,9 +25,14 @@ This file is a test of google NLP api. I usde google NLP to analyze natural lang
 The result is 0.899, which is very positive.
 
 
-## user story.
-The owner of the restaurant can use my program to determine what types of restaurants are popular in this area.
-First use twiter api get the tweets about different type of food in this area.
-Then use google NLP find the most positive one.
+## user story
+Tweeter channel host can know what is the altitude his followers have with the topic he want to post.
+When channel host have a new topic want to post. He can check the altitude score. The score is between -1 to 1. 1 is the most positive score.
+
+## main Functin
+In this function, the channel host need set up channels name and the topic he want to check.
+Then this function will go through all his followers.
+For each follower this function will take out the tweet relate to this topic, and then use google NLP determin the altitude.
+At last this function will returen the average altitude score and the number of tweets relate to the topic
 
 
