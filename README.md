@@ -35,4 +35,11 @@ Then this function will go through all his followers.
 For each follower this function will take out the tweet relate to this topic, and then use google NLP determin the altitude.
 At last this function will returen the average altitude score and the number of tweets relate to the topic
 
+## unit test: wrongkey
+This function is test the keyword not exist. if the keyword is not exist, there will no text pass to NLP. So the count will be 0. This will cause a problem at avescore = score/count
 
+## unit test: wronglan
+This is test with wrong Language code. api.search_tweets can't handel wrong Language code, there will be an error.
+
+## unit test: wrongname
+This is test with the name not exist. error massage about user not exit will appear.
