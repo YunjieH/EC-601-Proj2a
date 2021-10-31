@@ -4,12 +4,13 @@ from google.cloud import language_v1
 
 
 # Instantiates a client
-client = language_v1.LanguageServiceClient.from_service_account_json('ec602-2a-f3106761679c.json')
+client = language_v1.LanguageServiceClient.from_service_account_json('/ec602-2a-f3106761679c.json')
 
 
 
 
 # assign the values accordingly
+
 consumer_key = ""
 consumer_secret = ""
 access_key = ""
@@ -26,15 +27,16 @@ auth.set_access_token(access_key, access_secret)
 api = tweepy.API(auth)
 
 # the screen_name of the targeted user
-name = ""  # set your account screen name
-query = ''  # set the topic you want
+name = "@YunjieHuang97"  # set your account screen name
+query = '1'  # set the topic you want
 language = "en"  # set language
 score = 0  # initial score is 0
 count = 0
-for follower in api.get_follower_ids(screen_name=name):
+print(api.followers_ids(screen_name=name))
+for follower in api.followers_ids(screen_name=name):
     # this for loop will go through each follower
     results = api.search_tweets(q=query, lang=language)
-    if result != []:
+    if results != []:
         document = language_v1.Document(content=results, type_=language_v1.Document.Type.PLAIN_TEXT)
         sentiment = client.analyze_sentiment(request={'document': document}).document_sentiment
         score = score + sentiment.magnitude
